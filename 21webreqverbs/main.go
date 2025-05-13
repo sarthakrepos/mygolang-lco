@@ -10,9 +10,9 @@ import (
 
 func main() {
 	fmt.Println("Welcome to Web verb")
-	// PerformGetRequest()
+	PerformGetRequest()
 	// PerformPostJsonRequest()
-	PerformPostFormRequest()
+	// PerformPostFormRequest()
 }
 
 func PerformGetRequest() {
@@ -28,16 +28,16 @@ func PerformGetRequest() {
 	fmt.Println("Status Code", response.StatusCode)
 	fmt.Println("Content length", response.ContentLength)
 
-	var responseString strings.Builder
+	// var responseString strings.Builder
 
 	content, _ := ioutil.ReadAll(response.Body)
-	byteCount, _ :=responseString.Write(content)
+	// byteCount, _ :=responseString.Write(content)
 
-	fmt.Println("ByteCount is", byteCount)
-	fmt.Println(responseString.String())
+	// fmt.Println("ByteCount is", byteCount)
+	// fmt.Println(responseString.String())
 
 
-	// fmt.Println(string(content))
+	fmt.Println(string(content))
 }
 
 func PerformPostJsonRequest(){
