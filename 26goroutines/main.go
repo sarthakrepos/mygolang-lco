@@ -14,7 +14,7 @@ func main() {
 	websitelist := []string{
 		"https://google.com",
 		"https://facebook.com",
-		"https://chatgpt.com",
+		"https://go.dev",
 		"https://github.com",
 		"https://apple.com",
 	}

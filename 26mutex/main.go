@@ -10,6 +10,8 @@ var signals = []string{"test"}
 
 var wg sync.WaitGroup
 
+var mut sync.Mutex
+
 func main() {
 
 	websitelist := []string{
@@ -34,7 +36,9 @@ func getStatusCode(endpoint string) {
 	if err != nil {
 		fmt.Println("OOPS in endpoint")
 	}else{
+		mut.Lock()
 		signals = append(signals, endpoint)
+		mut.Unlock()
 		fmt.Printf("%d 200 status code for website %s\n", res.StatusCode, endpoint)
 	}
 
